@@ -1,29 +1,37 @@
 #!/usr/bin/python3
 
+""" 
+simple wrapper script for pandocs markdown to pdf conversion
+------------------------------------------------------------
+usage:
+    ./md2pdf.py <file.md>
+output:
+     <file.pdf>
+"""
+
 from sys import argv
 from re import search
 import subprocess
 
 
-
 def main():
 
-    if len(argv) != 2:
-        print("Error - Invalid args!")
+    if len(argv) < 2:
+        print("Error - Invalid number of args! Pass at least a single markdown file")
         return -1
 
-    md_file = argv[1]
-    if not search(r"[.]md$", md_file):
-        print("Error - Pass .md file as arguments")
-        return -2
+    for arg in argv:
 
-    pdf_file = md_file[:-2] + "pdf"
-    subprocess.run(["pandoc", "-o", pdf_file, md_file])
-    print(f"Created {pdf_file} from {md_file}!")
+        if not search(r"[.]md$", arg):
+            print(f"Warning - Argument {arg} is not a .md file, skipped its conversion")
+            continue
+
+        pdf_file = arg[:-2] + "pdf"
+        subprocess.run(["pandoc", "-o", pdf_file, arg])
+        print(f"Created {pdf_file} from {arg}!")
+
     return 0
 
-
-    
 
 if __name__ == "__main__":
     main()
