@@ -4,9 +4,9 @@
 simple wrapper script for pandocs markdown to pdf conversion
 ------------------------------------------------------------
 usage:
-    ./md2pdf.py <file.md>
+    ./md2pdf.py <file.md> ...
 output:
-     <file.pdf>
+     <file.pdf> ...
 """
 
 from sys import argv
@@ -23,7 +23,7 @@ def main():
     for arg in argv:
 
         if not search(r"[.]md$", arg):
-            print(f"Warning - Argument {arg} is not a .md file, skipped its conversion")
+            print(f"Warning - Argument {arg} is not a .md file, skipped conversion")
             continue
 
         pdf_file = arg[:-2] + "pdf"
