@@ -1,0 +1,13 @@
+#include "NAME.h"
+
+// interface
+
+NAME::NAME() {};
+NAME::~NAME() {};
+NAME::NAME(const NAME& other) {};
+NAME& NAME::operator=(const NAME& other) {};
+
+
+// private methods
+
+void NAME::to_string() const {};
