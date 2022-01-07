@@ -29,7 +29,7 @@ from re import match
 
 # add/ modify your systems -> keyword : (homeDirectory, backupDirectory)
 systems = {
-    "macbookPro": ("/Users/rmn", "/Users/rmn/mainRepo/configs/macbookPro"),
+    "macbookPro": ("/Users/rmn", "/Users/rmn/github/rmn_main/configs/macbookPro"),
     "matebook": ("/home/rmn", "/home/rmn/github/rmn_main/configs/matebook"),
     "matepad" : ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/mainRepo/configs/matepad"),
     "xiaomiPoco": ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/mainRepo/configs/xiaomiPoco")
