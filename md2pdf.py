@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ 
 simple wrapper script for pandocs markdown to pdf conversion
 ------------------------------------------------------------
@@ -8,11 +7,9 @@ usage:
 output:
      <file.pdf> ...
 """
-
 from sys import argv
 from re import search
 import subprocess
-
 
 def main():
 
@@ -20,7 +17,10 @@ def main():
         print("Error - Invalid number of args! Pass at least a single markdown file")
         return -1
 
-    for arg in argv:
+    for idx, arg in enumerate(argv):
+
+        if not idx:
+            continue
 
         if not search(r"[.]md$", arg):
             print(f"Warning - Argument {arg} is not a .md file, skipped conversion")
