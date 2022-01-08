@@ -34,6 +34,8 @@ software = [
     "nnn",
     "tmux",
     "gcc",
+    "make",
+    "g++",
     "curl",
     "wget"
 ]
@@ -41,7 +43,7 @@ software = [
 def installer():
 
     global paketmanager, software
-    
+
     if len(argv) != 2:
         print("Error - Invalid number of arguments")
         return False
