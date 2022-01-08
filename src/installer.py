@@ -33,6 +33,9 @@ software = [
     "tree",
     "nnn",
     "tmux",
+    "gcc",
+    "curl",
+    "wget"
 ]
 
 def installer():
@@ -41,18 +44,23 @@ def installer():
     
     if len(argv) != 2:
         print("Error - Invalid number of arguments")
-        return -1
+        return False
 
     pm = argv[1].lower()
 
     if not pm in paketmanager.keys():
         print(f"Error - {pm} is not supported! Choose from {paketmanager.keys()}")
-        return  -2
+        return  False
 
     command = paketmanager[pm] + software
     subprocess.run(command)
-    return 0
+    return True
 
 
 if __name__ == "__main__":
-    installer()
+
+    if installer():
+        print("Finished installer")
+
+    else:
+        print("Something went wrong")
