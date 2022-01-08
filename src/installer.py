@@ -50,9 +50,8 @@ def installer():
         return  -2
 
     command = paketmanager[pm] + software
-    print (command)
-
     subprocess.run(command)
+    return 0
 
 
 if __name__ == "__main__":
