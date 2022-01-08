@@ -2,7 +2,7 @@
 
 """
 description:
-installer script for basic software on linux/macOS
+installer script for basic command line packages on linux/macOS
 
 usage:
 ./installer.py <paketmanager>
@@ -22,7 +22,7 @@ paketmanager = {
     "homebrew":     ["brew", "install"],
      "apt":                ["sudo",  "apt", "install"],
      "snap":              ["snap",  "install"],
-     "pkg":               ["pkg",  "install"]
+     "pkg":               ["pkg",  "install"],
 }
 
 software = [
