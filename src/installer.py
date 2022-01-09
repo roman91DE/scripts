@@ -19,7 +19,7 @@ from sys import argv
 import subprocess
 
 paketmanager = {
-    "homebrew":    [["brew update"], ["brew", "install"]],
+    "homebrew":    [["brew update", "&", "brew", "upgrade"], ["brew", "install"]],
     "apt":         [["sudo", "apt" , "update", "&", "sudo", "apt" , "upgrade"], ["sudo",  "apt", "install"]],
     "snap":        [["snap", "refresh"], ["snap",  "install"]],
     "pkg":         [["pkg", "upgrade"], ["pkg",  "install"]],
