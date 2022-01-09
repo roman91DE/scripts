@@ -37,7 +37,8 @@ software = [
     "make",
     "g++",
     "curl",
-    "wget"
+    "wget",
+    "neofetch"
 ]
 
 def installer():

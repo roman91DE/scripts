@@ -32,7 +32,7 @@ systems = {
     "macbookPro": ("/Users/rmn", "/Users/rmn/github/rmn_main/configs/macbookPro"),
     "matebook": ("/home/rmn", "/home/rmn/github/rmn_main/configs/matebook"),
     "matepad" : ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/mainRepo/configs/matepad"),
-    "xiaomiPoco": ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/mainRepo/configs/xiaomiPoco")
+    "xiaomiPoco": ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/github/rmn_main/configs/xiaomiPoco")
     # add new system here ...
 }
 
