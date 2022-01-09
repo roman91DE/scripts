@@ -19,10 +19,10 @@ from sys import argv
 import subprocess
 
 paketmanager = {
-    "homebrew":     ["brew", "install"],
-     "apt":         ["sudo",  "apt", "install"],
-     "snap":        ["snap",  "install"],
-     "pkg":         ["pkg",  "install"],
+    "homebrew":    ["brew", "install"],
+    "apt":         ["sudo",  "apt", "install"],
+    "snap":        ["snap",  "install"],
+    "pkg":         ["pkg",  "install"],
 }
 
 software = [
@@ -57,7 +57,7 @@ def installer():
 
     for package in software:
         command = paketmanager[pm] + [package]
-    subprocess.run(command)
+        subprocess.run(command)
     
     return True
 
