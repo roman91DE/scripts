@@ -63,6 +63,21 @@ def installer():
     for package in software:
         command = paketmanager[pm][1] + [package]
         subprocess.run(command)
+
+    # set zsh as login shell
+    subprocess.run(
+        ["chsh", "-s", "$(which zsh)"]
+    )
+
+    # set git configuration
+    subprocess.run(
+        ["git", "config", "--global", "user.email", "rohoehn123@gmail.com", "&",
+         "git", "config", "--global", "user.name", "rohoehn"]
+    )
+
+     
+#  git config --global user.email "your_email@example.com"
+
     
     return True
 
