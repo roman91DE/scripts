@@ -19,10 +19,10 @@ from sys import argv
 import subprocess
 
 paketmanager = {
-    "homebrew":    ["brew", "install"],
-    "apt":         ["sudo",  "apt", "install"],
-    "snap":        ["snap",  "install"],
-    "pkg":         ["pkg",  "install"],
+    "homebrew":    [["brew update"], ["brew", "install"]],
+    "apt":         [["sudo", "apt" , "update", "&", "sudo", "apt" , "upgrade"], ["sudo",  "apt", "install"]],
+    "snap":        [["snap", "refresh"], ["snap",  "install"]],
+    "pkg":         [["pkg", "upgrade"], ["pkg",  "install"]],
 }
 
 software = [
@@ -55,8 +55,13 @@ def installer():
         print(f"Error - {pm} is not supported! Choose from {paketmanager.keys()}")
         return  False
 
+    # update repositories
+    command = paketmanager[pm][0]
+    subprocess.run(command)
+
+    # install packages
     for package in software:
-        command = paketmanager[pm] + [package]
+        command = paketmanager[pm][1] + [package]
         subprocess.run(command)
     
     return True
