@@ -21,8 +21,8 @@ import subprocess
 paketmanager = {
     "homebrew":    [["brew", "update", "&", "brew", "upgrade"], ["brew", "install"]],
     "apt":         [["sudo", "apt" , "update", "&", "sudo", "apt" , "upgrade"], ["sudo",  "apt", "install"]],
-    "snap":        [["snap", "refresh"], ["snap",  "install"]],
-    "pkg":         [["pkg", "upgrade"], ["pkg",  "install"]],
+    "snap":        [["sudo", "snap", "refresh"], ["sudo", "snap", "install"]],
+    "pkg":         [["pkg", "upgrade"], ["pkg", "install"]],
 }
 
 software = [
@@ -63,6 +63,17 @@ def installer():
     for package in software:
         command = paketmanager[pm][1] + [package]
         subprocess.run(command)
+
+    # set zsh as login shell
+    subprocess.run(
+        ["chsh", "-s", "$(which zsh)"]
+    )
+
+    # set git configuration
+    subprocess.run(
+        ["git", "config", "--global", "user.email", "rohoehn123@gmail.com", "&",
+         "git", "config", "--global", "user.name", "rohoehn"]
+    )
     
     return True
 
