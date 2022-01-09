@@ -20,9 +20,9 @@ import subprocess
 
 paketmanager = {
     "homebrew":     ["brew", "install"],
-     "apt":                ["sudo",  "apt", "install"],
-     "snap":              ["snap",  "install"],
-     "pkg":               ["pkg",  "install"],
+     "apt":         ["sudo",  "apt", "install"],
+     "snap":        ["snap",  "install"],
+     "pkg":         ["pkg",  "install"],
 }
 
 software = [
@@ -55,8 +55,10 @@ def installer():
         print(f"Error - {pm} is not supported! Choose from {paketmanager.keys()}")
         return  False
 
-    command = paketmanager[pm] + software
+    for package in software:
+        command = paketmanager[pm] + [package]
     subprocess.run(command)
+    
     return True
 
 
