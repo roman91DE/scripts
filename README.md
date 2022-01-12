@@ -11,3 +11,4 @@ clone the repository and add it to you path to use the program by calling its na
 ## option 2
 
 pick single scripts from the src folder and pull them manually, every script contains a short explanation at the top of the file
+../..
