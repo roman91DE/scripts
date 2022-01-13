@@ -15,11 +15,13 @@ fi
 
 LIST=$(cat remote.txt)
 
+echo $(DATE)
+
 for REPO in $LIST
     do
         cd ${REPO}
         echo "Updating repository ${REPO}"
-        echo "-------------------------------"
+        echo "-------------------------------"; echo
         git pull
         git add *; git commit -m "$(date): update-remote.sh"; git push
         cd ${PROJECT_DIR}
