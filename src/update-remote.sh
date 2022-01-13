@@ -21,8 +21,9 @@ for REPO in $LIST
     do
         cd ${REPO}
         echo "Updating repository ${REPO}"
-        echo "-------------------------------"; echo
+        echo "-------------------------------"
         git pull
         git add *; git commit -m "$(date): update-remote.sh"; git push
+        echo
         cd ${PROJECT_DIR}
     done
