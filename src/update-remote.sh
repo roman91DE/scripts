@@ -1,14 +1,14 @@
 #!/bin/sh
 
 DIR="/Users/rmn/github"
+REMOTE_FILE="${DIR}/remote.txt"
+
 cd $DIR
 
-if [ ! -f "$FILE "]; then
+if [ ! -f "$REMOTE_FILE" ]; then
     echo "Create remote.txt as a list of remote repositories"
     exit
 fi
-
-REMOTE_FILE="${DIR}/remote.txt"
 
 
 LIST=$(cat remote.txt)
