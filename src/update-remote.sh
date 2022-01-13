@@ -3,6 +3,14 @@
 DIR="/Users/rmn/github"
 cd $DIR
 
+if [ ! -f "$FILE "]; then
+    echo "Create remote.txt as a list of remote repositories"
+    exit
+fi
+
+REMOTE_FILE="${DIR}/remote.txt"
+
+
 LIST=$(cat remote.txt)
 
 for REPO in $LIST
