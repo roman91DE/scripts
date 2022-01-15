@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # set parent directory for remote repositories
-PROJECT_DIR="/Users/rmn/github"
+PROJECT_DIR="${HOME}/github"
 
 # list all remote repositories to be included in file remote.txt inside PROJECT_DIR
 REMOTE_FILE="${PROJECT_DIR}/remote.txt"
