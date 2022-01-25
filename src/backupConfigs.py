@@ -15,10 +15,8 @@ systems = {
     "systemName" : ("pathHomeFolder", "pathBackupFolder")
     }
 ```
-dependencies:
+requirements:
 1. python3.8 or higher
-2. mkdir
-3. cp
 
 """
 
@@ -45,7 +43,7 @@ def checkBackupDir(backupDir: str):
         files = os.listdir(backupDir)
     except PermissionError:     # cron specific permission error occurs here
         print("Permission Error occured!")
-        return
+        continue
     for file in files:
         if match("backupConfigs", file):
             return
