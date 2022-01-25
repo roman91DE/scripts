@@ -15,7 +15,7 @@ fi
 
 LIST=$(cat remote.txt)
 
-echo $(DATE)
+echo $(date)
 
 for REPO in $LIST
     do
