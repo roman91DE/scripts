@@ -31,7 +31,7 @@ systems = {
     "matebook": ("/home/rmn", "/home/rmn/github/rmn_main/configs/matebook"),
     "matepad" : ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/mainRepo/configs/matepad"),
     "xiaomiPoco": ("/data/data/com.termux/files/home", "/data/data/com.termux/files/home/github/rmn_main/configs/xiaomiPoco")
-    # add new system here ...
+    # add new devices here ...
 }
 
 dot_files = []
@@ -73,7 +73,7 @@ def copyDotFiles(backupDir: str) -> None:
     """copy all dot_files to the backup directory"""
     global dot_files
     for file in dot_files:
-        subprocess.run(["cp", f"{file}", f"{backupDir}/backupConfigs/"])
+        subprocess.run(["cp", "-r", f"{file}", f"{backupDir}/backupConfigs/"])
 
 
 def main():
