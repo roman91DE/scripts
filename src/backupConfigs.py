@@ -58,12 +58,15 @@ def getDotFiles(homeDir: str):
     for file in files:
         if match("^[.]+", file):
             if match(".([tT]rash)", file):
-                continue  # skip trash & protected files
-            absPath = f"{homeDir}/{file}"
-            if os.path.isdir(absPath):
-                getDotFiles(absPath)
+                continue  # skip trash
             else:
-                dot_files.append(absPath)
+                dot_files.append(f"{homeDir}/{file}")
+            # absPath = f"{homeDir}/{file}"
+            # if os.path.isdir(absPath):
+            #     getDotFiles(absPath)
+            # else:
+            # dot_files.append(absPath)
+            
 
 
 def copyDotFiles(backupDir: str) -> None:
