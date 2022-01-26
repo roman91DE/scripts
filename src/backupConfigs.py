@@ -59,13 +59,11 @@ def getDotFiles(homeDir: str):
         if match("^[.]+", file):
             if match(".([tT]rash)", file):
                 continue  # skip trash
+            absPath = f"{homeDir}/{file}"
+            if os.path.isdir(absPath):
+                getDotFiles(absPath)
             else:
-                dot_files.append(f"{homeDir}/{file}")
-            # absPath = f"{homeDir}/{file}"
-            # if os.path.isdir(absPath):
-            #     getDotFiles(absPath)
-            # else:
-            # dot_files.append(absPath)
+                dot_files.append(absPath)
             
 
 
@@ -73,7 +71,7 @@ def copyDotFiles(backupDir: str) -> None:
     """copy all dot_files to the backup directory"""
     global dot_files
     for file in dot_files:
-        subprocess.run(["cp", "-r", f"{file}", f"{backupDir}/backupConfigs/"])
+        subprocess.run(["cp", f"{file}", f"{backupDir}/backupConfigs/"])
 
 
 def main():
