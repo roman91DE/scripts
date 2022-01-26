@@ -43,7 +43,6 @@ def checkBackupDir(backupDir: str):
         files = os.listdir(backupDir)
     except PermissionError:     # cron specific permission error occurs here
         print("Permission Error occured!")
-        continue
     for file in files:
         if match("backupConfigs", file):
             return
