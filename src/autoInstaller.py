@@ -2,7 +2,7 @@
 
 """
 description:
-installer script for basic command line packages on linux/macOS
+installer script for basic command line packages on linux/macOS/termux
 
 usage:
 ./installer.py <paketmanager>
@@ -38,7 +38,8 @@ software = [
     "g++",
     "curl",
     "wget",
-    "neofetch"
+    "neofetch",
+    "openssh"
 ]
 
 def installer():
@@ -60,9 +61,8 @@ def installer():
     subprocess.run(command)
 
     # install packages
-    for package in software:
-        command = paketmanager[pm][1] + [package]
-        subprocess.run(command)
+    command = paketmanager[pm][1] + software
+    subprocess.run(command)
 
     # set zsh as login shell
     subprocess.run(
@@ -74,7 +74,7 @@ def installer():
         ["git", "config", "--global", "user.email", "rohoehn123@gmail.com", "&",
          "git", "config", "--global", "user.name", "rohoehn"]
     )
-    
+
     return True
 
 
