@@ -29,9 +29,9 @@ def main():
         elif unit == "weeks":
             out = td_in_secs / ((60**2) * 24 * 7)
         elif unit == "months":
-            out = td_in_secs / ((60**2) * 24 * 7 * 30.5)
+            out = td_in_secs / ((60**2) * 24 * 30.5)
         elif unit == "years":
-            out = td_in_secs / ((60**2) * 24 * 7 * 30.5 * 12)
+            out = td_in_secs / ((60**2) * 24 * 30.5 * 12)
         else:
             raise RuntimeError
 
